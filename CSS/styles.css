@@ -16,6 +16,41 @@ h1,h2,h3{letter-spacing:1px}
 
 p{ font-size: 1.8em; line-height: 1.4; font-weight: 300; color: #222 }
 
+sup{
+  vertical-align: super;
+  font-size: .7em;
+  padding-left:2px;
+  position: relative;
+}
+
+sup:hover{
+  font-weight: 700;
+  cursor: pointer;
+}
+sup:hover::before{
+  content: '\25B2';
+  position: absolute;
+  top: -8px; left: 8px;
+  font-size: 18px;
+  color: #222;
+}
+sup:hover::after{
+  content:'('attr(cite)')';
+  position: absolute;
+  bottom: 4px; left: 16px;
+  background: #222;
+  padding: 4px 12px;
+  white-space: nowrap;
+
+  color: #FFF;
+  font-weight: 300;
+  display: block;
+}
+
+span.hide-cite{
+  display: none;
+}
+
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
 ::::::::::::::::::::  LAYOUT                                                                 ::::::::::::::::::::
@@ -73,23 +108,35 @@ nav.top .mobile .hidden-menu{
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 #table-of-contents ul.main{ 
-  margin-bottom: 2.4rem;
-  font-size: 1.6em;
+  font-size: 1.4em;
   font-family: 'Sarabun', sans-serif;
 }
 
 #table-of-contents ul.main > li{ margin-bottom: .4rem }
 #table-of-contents ul.main > li >a {font-weight: 700}
 
-#table-of-contents ul.main ul.subsections{ 
+#table-of-contents ul.main ul.subsections{
   width: 100%;
   font-size: .9em;
 }
 
+#table-of-contents ul.main ul.subsections > li::before{
+  content: '\2022';
+}
+
 #table-of-contents ul.main ul.subsections > li{ margin-top: .8rem; }
+#table-of-contents ul.main ul.subsections > li a {display:none}
 #table-of-contents ul.main ul.subsections > li:first-of-type{ margin-top: 0; }
 
 #table-of-contents a{ text-decoration: none; color: #000 }
+
+#table-of-contents ul.main[data-status='active']{
+  
+}
+
+#table-of-contents ul.main[data-status='active'] ul.subsections > li::before{display:none}
+#table-of-contents ul.main[data-status='active'] ul.subsections > li a{ display: block }
+#table-of-contents ul.main[data-status='active']{ font-size: 1.6em }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
@@ -141,6 +188,7 @@ nav.top .mobile .hidden-menu{
   width: 75%; height: 100%;
   left: 25%;
   overflow-y: scroll;
+  scroll-behavior: smooth;
   padding-left: 2.4rem;
   padding-bottom: 4.8rem;
   padding-right: 1.6rem;
@@ -154,7 +202,7 @@ nav.top .mobile .hidden-menu{
 .right-content h4{ margin-bottom: 1.6rem; }
 .right-content h5{ margin-bottom: 1.6rem; }
 .right-content h6{ margin-bottom: .8rem; }
-.right-content p{ margin-bottom: 2.4rem; }
+.right-content p{ margin-bottom: 3.2rem; }
 
   .right-content::-webkit-scrollbar{ width: 2px }
   .right-content::-webkit-scrollbar-thumb{ background: #000 }
@@ -269,6 +317,29 @@ p.excerpt-note{
   max-width: 560px;
   margin-top: 1.6rem;
 }
+
+.glossary-term p{
+  font-size: 1.6em;
+}
+
+.glossary-term p .term{
+  font-weight: 700;
+  margin-right: .8rem;
+}
+
+.glossary-term.sub{padding-left: 6.4rem}
+.glossary-term.sub-sub{padding-left: 12.8rem}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

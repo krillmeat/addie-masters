@@ -14,11 +14,13 @@ window.onload = function(){
 function init(){
     console.log("%cInitializing...","color:#999");
     setupDebug();
+    connectToC(document.getElementById('table-of-contents'),'main-section');
 }
 
 function connectToC(elem,sectionClass){
   tableOfContents = new TableOfContents(elem,sectionClass);
   tableOfContents.buildTableOfContents();
+  tableOfContents.attachListeners();
 }
 
 /**
