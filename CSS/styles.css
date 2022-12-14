@@ -17,6 +17,7 @@ h1,h2,h3{letter-spacing:1px}
 p{ font-size: 1.8em; line-height: 1.4; font-weight: 300; color: #222 }
 
 sup{
+  display: none;
   vertical-align: super;
   font-size: .7em;
   padding-left:2px;
@@ -48,7 +49,8 @@ sup:hover::after{
 }
 
 span.hide-cite{
-  display: none;
+  /* display: none; */
+  display: inline;
 }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -219,7 +221,7 @@ nav.top .mobile .hidden-menu{
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 0;
+  padding: 4rem 0 1.6rem 0;
 }
 
 .video-wrap p.video-note{
@@ -227,13 +229,24 @@ nav.top .mobile .hidden-menu{
   font-size: 1.6em;
   max-width: 560px;
   margin-top: 1.6rem;
+  margin-bottom: 0;
 }
+
+.video-wrap.exception{ padding: 0}
+.video-wrap.exception a{
+  font-size: 1.6em;
+  text-align: left;
+  width:100%;
+}
+.video-wrap.exception .video-note{margin-top:.8rem}
 
 .key-player{
   display:flex;
   flex-wrap: wrap;
   margin-top: 4.8em;
 }
+
+.key-player h5{ margin-bottom: .8rem }
 
 .key-player > h5,
 .key-player > h6,
@@ -307,6 +320,8 @@ a.article-link{
   padding: 2.4rem;
 }
 
+.excerpt-wrap.example-four{margin-bottom: 1.6rem}
+
 .excerpt-wrap img{
   width: 75%;
 }
@@ -330,7 +345,12 @@ p.excerpt-note{
 .glossary-term.sub{padding-left: 6.4rem}
 .glossary-term.sub-sub{padding-left: 12.8rem}
 
-
+p.ref{ 
+  font-size: 1.4em; 
+  text-indent: -3.2rem; 
+  padding-left: 3.2rem; 
+  margin-bottom: 2.4rem;
+}
 
 
 
