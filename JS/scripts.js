@@ -1,4 +1,5 @@
 var debug;
+var scrollListener;
 
 window.onload = function(){
     init();
@@ -13,6 +14,11 @@ window.onload = function(){
 function init(){
     console.log("%cInitializing...","color:#999");
     setupDebug();
+}
+
+function connectToC(elem,sectionClass){
+  tableOfContents = new TableOfContents(elem,sectionClass);
+  tableOfContents.buildTableOfContents();
 }
 
 /**
