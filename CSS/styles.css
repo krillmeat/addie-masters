@@ -7,14 +7,14 @@ h1,h2,h3{ font-family: 'Source Serif Pro', serif }
 h4,h5,h6, p{ font-family: 'Sarabun', sans-serif }
 
 /* h1{} */
-h2{ font-size: 5.6em; font-weight: 700 }
-h3{ font-size: 4.8em; line-height: 1.1 }
-h4{ font-size: 3.2em; line-height: 1.2 }
-h5{ font-size: 2.4em }
-h6{ font-size: 1.7em; font-weight: 700 }
+h2{ font-size: 5.6em; font-weight: 700; color: #071C2E }
+h3{ font-size: 4.8em; line-height: 1.1;color: #071C2E }
+h4{ font-size: 2.4em; line-height: 1.2; color: #114773; font-weight: 700; letter-spacing: .5px }
+h5{ font-size: 2em; color: #47769D; line-height: 1.3 }
+h6{ font-size: 1.7em; font-style: italic; color: #47769D  }
 h1,h2,h3{letter-spacing:1px}
 
-p{ font-size: 1.8em; line-height: 1.4; font-weight: 300; color: #222 }
+p{ font-size: 1.6em; line-height: 1.5; font-weight: 300; color: #222 }
 
 sup{
   display: none;
@@ -51,6 +51,11 @@ sup:hover::after{
 span.hide-cite{
   /* display: none; */
   display: inline;
+}
+
+a{
+  font-family: 'Sarabun', sans-serif; 
+  color: #18608A;
 }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -112,6 +117,7 @@ nav.top .mobile .hidden-menu{
 #table-of-contents ul.main{ 
   font-size: 1.4em;
   font-family: 'Sarabun', sans-serif;
+  color: #114773;
 }
 
 #table-of-contents ul.main > li{ margin-bottom: .4rem }
@@ -126,16 +132,16 @@ nav.top .mobile .hidden-menu{
   content: '\2022';
 }
 
-#table-of-contents ul.main ul.subsections > li{ margin-top: .8rem; }
+#table-of-contents ul.main ul.subsections > li{ margin-top: 1.2rem; font-size: 1.2rem }
 #table-of-contents ul.main ul.subsections > li a {display:none}
 #table-of-contents ul.main ul.subsections > li:first-of-type{ margin-top: 0; }
 
-#table-of-contents a{ text-decoration: none; color: #000 }
+#table-of-contents a{ text-decoration: none; color: #071C2E; }
 
 #table-of-contents ul.main[data-status='active']{
-  
+  padding-bottom:.8rem;
 }
-
+#table-of-contents ul.main[data-status='active'] > li > a{letter-spacing: .5px; color: #114773;}
 #table-of-contents ul.main[data-status='active'] ul.subsections > li::before{display:none}
 #table-of-contents ul.main[data-status='active'] ul.subsections > li a{ display: block }
 #table-of-contents ul.main[data-status='active']{ font-size: 1.6em }
@@ -150,13 +156,19 @@ nav.top .mobile .hidden-menu{
 ::::::::::::::::::::  HERO                                                                   ::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 #hero{
-  margin-top: 4rem;
-  height: 16rem;
+  margin-top: 2.4rem;
+  height: 17.6rem;
   padding-top: 1.6rem;
 }
 
 #hero p.sub-header{
-  font-size: 2em;
+  font-size: 2.4em;
+  font-style: italic;
+  margin-bottom: .8rem;
+}
+
+#hero p.author{
+  font-size: 1.6em;
 }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -274,6 +286,8 @@ nav.top .mobile .hidden-menu{
 
 .key-player h6{ margin-top: .8rem }
 
+.key-player.full .right{ width: 100% }
+
 .right-content ul{
   list-style: disc;
   padding-left: 1.8rem;
@@ -281,12 +295,14 @@ nav.top .mobile .hidden-menu{
 
 .right-content li{
   font-family: 'Sarabun', sans-serif;
-  font-size: 1.8em;
+  font-size: 1.6em;
   font-weight: 300;
   color: #222;
   line-height: 1.4;
   margin-bottom: 1.6rem;
 }
+
+.right-content li .embolden{color: #47769D; font-weight: 500 }
 
 .right-content p.author-name{
   font-size: 2em;
@@ -294,11 +310,13 @@ nav.top .mobile .hidden-menu{
 }
 
 a.article-link{
-  color: #000;
+  color: #18608A;
   font-size: 1.8em;
   margin-bottom: 2.4rem;
   display: block;
 }
+
+a.article-link span{ text-decoration: none;}
 
 .pull{
   border: 1px solid #000;
@@ -326,6 +344,8 @@ a.article-link{
   width: 75%;
 }
 
+.excerpt-wrap.center{text-align: center}
+
 p.excerpt-note{
   font-style: italic;
   font-size: 1.6em;
@@ -340,6 +360,7 @@ p.excerpt-note{
 .glossary-term p .term{
   font-weight: 700;
   margin-right: .8rem;
+  color: #114773
 }
 
 .glossary-term.sub{padding-left: 6.4rem}
